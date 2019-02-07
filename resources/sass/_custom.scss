@@ -24,7 +24,6 @@ section {
     padding: 35px 0;
 }
 
-
 // Inputs
 
 input[type="text"] {
@@ -61,8 +60,8 @@ select {
     background: #d3d3d3;
     outline: none;
     opacity: 0.7;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
 }
 
 .slider::-webkit-slider-thumb {
@@ -102,7 +101,6 @@ select {
     @include media-breakpoint-up(lg) {
         width: 920px;
     }
-
 }
 
 .primary-nav {
@@ -120,7 +118,6 @@ a {
 a:hover {
     text-decoration: none;
 }
-
 
 // Buttons
 
@@ -270,17 +267,11 @@ a:hover {
     @include media-breakpoint-up(lg) {
         width: 920px;
     }
-
-
-
-
-
 }
 
 .hero-search-form form {
     margin: 0 auto;
     width: 90%;
-
 }
 
 .hero-search-form form input[type="text"] {
@@ -294,7 +285,6 @@ a:hover {
 }
 
 .hero-search-form form input[type="submit"] {
-
     width: 100%;
 
     @include media-breakpoint-up(lg) {
@@ -315,7 +305,6 @@ a:hover {
     @include media-breakpoint-up(lg) {
         width: 920px;
     }
-
 }
 
 .property-listings-slider-items {
@@ -352,7 +341,7 @@ a:hover {
 .content-wrapper {
     background-color: #fff;
     padding-bottom: 1em;
-    box-shadow: 8px 3px 11px 0px #dfdede
+    box-shadow: 8px 3px 11px 0px #dfdede;
 }
 
 .slider-description {
@@ -370,7 +359,7 @@ a:hover {
 
 .section-services {
     background-color: #ffffff;
-    box-shadow: 8px 3px 11px 0px #dfdede
+    box-shadow: 8px 3px 11px 0px #dfdede;
 }
 
 .services {
@@ -393,7 +382,6 @@ a:hover {
     @include media-breakpoint-up(lg) {
         @include make-col(6);
     }
-
 }
 
 .service-img figure {
@@ -417,7 +405,6 @@ a:hover {
     }
 }
 
-
 .icon-descrption-wrapper {
     @include make-row();
 }
@@ -440,11 +427,9 @@ a:hover {
     }
 }
 
-
 svg {
     margin-right: 1em;
 }
-
 
 // Testimonials
 
@@ -464,7 +449,6 @@ svg {
     @include make-col-ready();
     @include make-col(12);
     margin-bottom: 1em;
-
 
     @include media-breakpoint-up(md) {
         @include make-col(6);
@@ -530,12 +514,10 @@ footer .nav-link {
     margin-bottom: 1em;
 }
 
-
 // Search form
 
 .search-form-wrapper {
     @include make-container();
-
 
     @include media-breakpoint-up(lg) {
         width: 920px;
@@ -546,11 +528,9 @@ footer .nav-link {
     @include make-row();
 }
 
-
 .main-search-form {
     @include make-col-ready;
     @include make-col(12);
-
 
     @include media-breakpoint-up(lg) {
         @include make-col(6);
@@ -586,11 +566,11 @@ footer .nav-link {
     @include make-col(6);
 
     @include media-breakpoint-up(md) {
-        @include make-col(4)
+        @include make-col(4);
     }
 
     @include media-breakpoint-up(lg) {
-        @include make-col(3)
+        @include make-col(3);
     }
 }
 
@@ -622,9 +602,8 @@ footer .nav-link {
     }
 }
 
-.agent-social-icons {
+.agent-socials-icons {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-
 }
