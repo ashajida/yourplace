@@ -16,3 +16,5 @@ Route::get('/rent', 'PagesController@rent');
 Route::get('/buy', 'PagesController@buy');
 Route::get('/agents', 'PagesController@agents');
 
+Route::resource('posts', 'PostsController');
+

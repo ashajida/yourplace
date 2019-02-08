@@ -5,42 +5,25 @@
             <div class="property-listings-slider">
                 <h2>Recent Listings</h2>
                 <div class="property-listings-slider-items"> 
-                    <div class="property">
-                        <div class="content-wrapper">
-                            <figure class="slider-img-wrapper"><img src="{{ asset('img/property-2.jpg') }}" alt=""></figure> 
-                            <div class="slider-description">
-                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                                    totam...</p> 
+                    @if ($posts)
+                        @foreach ( $posts as $post )
+                                <div class="property">
+                                    <div class="content-wrapper">
+                                        <figure class="slider-img-wrapper"><img src="{{ asset('img/property-2.jpg') }}" alt=""></figure> 
+                                        <div class="slider-description">
+                                            <p>{{ $post->title }}</p> 
+                                            <p>{{ $post->postcode }}</p> 
+                                            <p>{{ $post->price }}</p> 
+                                        </div>
+                                        <div class="btn-wrapper">
+                                        <a class="_btn" href="/posts/{{ $post->id }}">Read More</a>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="btn-wrapper">
-                                <a class="_btn" href="#">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="property">
-                        <div class="content-wrapper">
-                            <figure class="slider-img-wrapper"><img src="{{ asset('img/property-2.jpg') }}" alt=""></figure> 
-                            <div class="slider-description">
-                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                                    totam...</p> 
-                            </div>
-                            <div class="btn-wrapper">
-                                <a class="_btn" href="#">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="property">
-                        <div class="content-wrapper">
-                            <figure class="slider-img-wrapper"><img src="{{ asset('img/property-2.jpg') }}" alt=""></figure> 
-                            <div class="slider-description">
-                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                                    totam...</p> 
-                            </div>
-                            <div class="btn-wrapper">
-                                <a class="_btn" href="#">Read More</a>
-                            </div>
-                        </div>
-                    </div>
+                        @endforeach
+                    @else
+                        <p>No recent properties<p>   
+                    @endif
                 </div>
             </div>
         </section>
