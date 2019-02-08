@@ -10508,6 +10508,11 @@ section {
   padding: 35px 0;
 }
 
+.text-sm {
+  font-size: 0.8em;
+  color: #555555;
+}
+
 input[type=text] {
   padding: 0.5em;
   width: 100%;
@@ -11216,7 +11221,7 @@ footer .nav-link {
   border-radius: 50%;
 }
 
-.agent-social-icons {
+.agent-socials-icons {
   display: flex;
   flex-direction: row;
   justify-content: space-around;

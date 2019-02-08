@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
 
+use App\Post;
+
 class PagesController extends Controller
 {
 
@@ -16,13 +18,16 @@ class PagesController extends Controller
     public function index()
     {
         $data = array( 'title' => 'Homepage', 'show_hero' => true );
+        $posts = Post::all();
 
-        return view('pages.index')->with('data', $data);
+        return view('pages.index')->with('data', $data)->with('posts', $posts);
     }
 
     public function rent()
     {
         $data = array( 'title' => 'Rent', 'show_hero' => false );
+
+
 
         return view('pages.rent')->with('data', $data);
     }

@@ -9,8 +9,8 @@
                         <figure>
                             <img src="{{ asset('img/agent-1.jpg') }}">
                         </figure>
-                        <h4>Jane Doe</h4>
-                        <p>Nottingham</p>
+                        <h5>Jane Doe</h5>
+                        <p class="text-sm">Nottingham</p>
                         <div class="agent-socials-icons">
                             <a href="#">
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="14px" height="14px" viewBox="0 0 546.773 546.773" style="enable-background:new 0 0 546.773 546.773;" xml:space="preserve">
