@@ -9,7 +9,7 @@
                 <a class="nav-link" href="/rent">Rent</a>
                 <a class="nav-link" href="/buy">Buy</a>
                 <a class="nav-link" href="/agents">Agents</a>
-                <a class="nav-link _btn" href="/login">Login</a>
+                <a class="nav-link _btn-ghost" href="/login">Login</a>
             </div>
             <div class="burger-menu">
                 <div></div>

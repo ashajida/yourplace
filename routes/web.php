@@ -17,4 +17,6 @@ Route::get('/buy', 'PagesController@buy');
 Route::get('/agents', 'PagesController@agents');
 
 Route::resource('posts', 'PostsController');
+Route::get('/rent/properties', 'PostsController@fetchProperties');
+Route::get('/buy/properties', 'PostsController@fetchProperties');
 
