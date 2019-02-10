@@ -10617,6 +10617,16 @@ a:hover {
   font-size: 14px;
 }
 
+._btn-ghost {
+  padding: 0.5em;
+  border: 1px #2ee4b1 solid;
+  border-radius: 7px;
+  color: #fff;
+  width: 100px;
+  text-align: center;
+  font-size: 14px;
+}
+
 ._btn:hover {
   background-color: #23af87;
   border: 1px #23af87 solid;

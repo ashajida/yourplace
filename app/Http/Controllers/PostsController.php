@@ -9,19 +9,30 @@ class PostsController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         // Posts from the database
-        $posts = Post::all();
+        $posts = null;
+        $data = array();
+        $location = null;
 
-        $data = array(
-            'show_hero' => false,
-        );
+        if ($request->filled('location')) {
+            //
+            $location = $request->input('location');
+    
+            $posts = Post::where('location', $location)
+            ->orWhere('postcode', $location)->orderBy('title', 'desc')->take(10)->get();
 
-        return view('posts.index')->with( 'data', $data)->with('posts', $posts );
+            $data = array(
+                'show_hero' => false,
+            );
+
+            return view('posts.index')->with( 'data', $data)->with('posts', $posts );
+        }
+    
     }
 
     /**
@@ -42,7 +53,8 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+
     }
 
     /**
@@ -91,5 +103,41 @@ class PostsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function fetchProperties(Request $request)
+    {
+
+        $location = "";
+        $bedrooms = "";
+        $price = "";
+        $property_status = "";
+        $posts = array();
+        
+        if ($request->has(['location', 'bedrooms', 'price', 'property-status'])) {
+            
+            $location = $request->input('location');
+            $bedrooms = $request->input('bedrooms');
+            $price = $request->input('price');
+            $property_status = $request->input('property-status');
+
+            $posts = Post::where('location', $location)
+                ->orWhere('postcode', $location)
+                ->where('property_status', $property_status)
+                ->where('bedrooms', $property_status)
+                ->where('price', $price)
+                ->take(10)->get();
+
+            $data = array('show_hero' => false);
+
+            return view('posts.show')->with('data', $data)->with('post', $post);
+        }
+        
     }
 }

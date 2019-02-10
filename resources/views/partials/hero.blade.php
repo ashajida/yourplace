@@ -5,7 +5,7 @@
         alt="hero-image">
     </div>
     <div class="hero-search-form">
-        <form action="" method="post">
+        <form action="/posts" method="get">
             <input type="text" name="location" placeholder="Search by location, eg. Postcode, City">
             <input type="submit" value="Search">
         </form>
