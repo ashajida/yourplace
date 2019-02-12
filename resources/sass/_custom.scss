@@ -1,0 +1,633 @@
+// Variables
+$primary-color: #2ee4b1;
+$secondary-color: #00b5e4;
+$links-color: #a0f28a;
+
+body {
+    box-sizing: border-box;
+    font-size: 18px;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+}
+
+// headings
+
+h1,
+h2,
+h3 {
+    margin-bottom: 1em;
+}
+
+// Sections
+
+section {
+    padding: 35px 0;
+}
+
+// Paragaphs
+.text-sm {
+    font-size: 0.8em;
+    color: #555555;
+}
+
+// Inputs
+
+input[type="text"] {
+    padding: 0.5em;
+    width: 100%;
+    margin-bottom: 1em;
+    font-size: 0.8em;
+    border: 1px #dfdede solid;
+    border-radius: 7px;
+    outline-color: $primary-color;
+    outline-width: thin;
+}
+
+input[type="submit"],
+select {
+    padding: 0.5em;
+    width: 100%;
+    font-size: 0.8em;
+    cursor: pointer;
+    background-color: $primary-color;
+    border: 1px $primary-color solid;
+
+    border-radius: 7px;
+    color: #fff;
+}
+
+// Range input
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 2px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: $primary-color;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: $primary-color;
+    cursor: pointer;
+}
+
+datalist {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 0.6em;
+    color: $secondary-color;
+}
+
+select {
+    outline: none;
+}
+
+// Wrapper
+.wrapper {
+    @include make-container();
+
+    @include media-breakpoint-up(lg) {
+        width: 920px;
+    }
+}
+
+.primary-nav {
+    background-color: #00b5e4;
+    padding: 1em;
+}
+
+// Links
+a {
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+// Buttons
+
+._btn {
+    padding: 0.5em;
+    border: 1px $primary-color solid;
+    border-radius: 7px;
+    background-color: $primary-color;
+    color: #fff;
+    width: 100px;
+    text-align: center;
+    font-size: 14px;
+    transition: all 0.5s;
+}
+
+._btn-ghost {
+    padding: 0.5em;
+    border: 1px $primary-color solid;
+    border-radius: 7px;
+    color: #fff;
+    width: 100px;
+    text-align: center;
+    font-size: 14px;
+    <<<<<<< HEAD=======transition: hover 0.5s;
+}
+
+._btn-ghost:hover {
+    background-color: $primary-color;
+    color: #fff;
+    >>>>>>>development
+}
+
+._btn:hover {
+    background-color: #23af87;
+    border: 1px #23af87 solid;
+    color: #fff;
+}
+
+// Navbar
+
+.primary-nav-list {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    position: relative;
+
+    @include media-breakpoint-up(md) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    @include media-breakpoint-up(lg) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    height: 0;
+    overflow: hidden;
+
+    @include media-breakpoint-up(md) {
+        flex-direction: row;
+        justify-content: space-between;
+        height: auto;
+    }
+
+    @include media-breakpoint-up(lg) {
+        flex-direction: row;
+        justify-content: space-between;
+        height: auto;
+    }
+}
+
+.nav-link {
+    padding-bottom: 1em;
+    border-bottom: 1px #ffffff solid;
+    margin-bottom: 1em;
+    font-size: 12px;
+
+    @include media-breakpoint-up(md) {
+        padding-bottom: 0;
+        margin-bottom: 0;
+        border-bottom: none;
+    }
+
+    @include media-breakpoint-up(lg) {
+        padding-bottom: 0;
+        margin-bottom: 0;
+        border-bottom: none;
+    }
+}
+
+.nav-links:hover {
+    color: #f0f0f0;
+    text-decoration: none;
+}
+
+// Burger button
+.burger-menu {
+    background-color: $primary-color;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    cursor: pointer;
+    border: 1px;
+    border-radius: 3px;
+
+    div {
+        background-color: #ffffff;
+        height: 3px;
+        width: 80%;
+        border: 1px;
+        border-radius: 8px;
+        margin: 0 auto;
+    }
+
+    @include media-breakpoint-up(md) {
+        display: none;
+    }
+
+    @include media-breakpoint-up(lg) {
+        display: none;
+    }
+}
+
+// Hero
+.hero {
+    @include make-container();
+    margin-bottom: 1em;
+
+    @include media-breakpoint-up(md) {
+        margin-bottom: 0;
+    }
+
+    @include media-breakpoint-up(lg) {
+        margin-bottom: 0;
+    }
+}
+
+.hero-wrapper {
+    @include make-row();
+    margin-bottom: -1em;
+}
+
+.hero-wrapper img {
+    width: 100%;
+    height: 700px;
+}
+
+.hero-search-form {
+    @include make-container();
+    background-color: #fff;
+    padding: 35px;
+    position: relative;
+    box-shadow: 8px 3px 11px 0px #dfdede;
+
+    @include media-breakpoint-up(lg) {
+        width: 920px;
+    }
+}
+
+.hero-search-form form {
+    margin: 0 auto;
+    width: 90%;
+}
+
+.hero-search-form form input[type="text"] {
+    width: 100%;
+    margin-bottom: 1em;
+
+    @include media-breakpoint-up(lg) {
+        width: 60%;
+        margin-left: 20px;
+    }
+}
+
+.hero-search-form form input[type="submit"] {
+    width: 100%;
+
+    @include media-breakpoint-up(lg) {
+        width: 30%;
+    }
+}
+
+.hero-search-form form input[type="submit"]:hover {
+    background-color: #23af87;
+    border: 1px #23af87 solid;
+    color: #fff;
+}
+
+// Recent property listings
+.property-listings-slider {
+    @include make-container();
+
+    @include media-breakpoint-up(lg) {
+        width: 920px;
+    }
+}
+
+.property-listings-slider-items {
+    @include make-row();
+}
+
+.description-wrapper {
+    background-color: #ffffff;
+}
+
+.property {
+    @include make-col-ready();
+    @include make-col(12);
+    margin-bottom: 1em;
+    // box-shadow: #f0f0f0;
+
+    @include media-breakpoint-up(md) {
+        @include make-col(6);
+    }
+
+    @include media-breakpoint-up(lg) {
+        @include make-col(4);
+    }
+}
+
+.slider-img-wrapper {
+    width: 100%;
+
+    img {
+        width: 100%;
+    }
+}
+
+.content-wrapper {
+    background-color: #fff;
+    padding-bottom: 1em;
+    box-shadow: 8px 3px 11px 0px #dfdede;
+}
+
+.slider-description {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.btn-wrapper {
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 100%;
+}
+
+// Services
+
+.section-services {
+    background-color: #ffffff;
+    box-shadow: 8px 3px 11px 0px #dfdede;
+}
+
+.services {
+    width: 100%;
+    @include make-container();
+}
+
+.services-wrapper {
+    @include make-row();
+}
+
+.service-img {
+    @include make-col-ready();
+    @include make-col(12);
+
+    @include media-breakpoint-up(md) {
+        @include make-col(6);
+    }
+
+    @include media-breakpoint-up(lg) {
+        @include make-col(6);
+    }
+}
+
+.service-img figure {
+    width: 100%;
+
+    img {
+        width: 100%;
+    }
+}
+
+.serives-description {
+    @include make-col-ready();
+    @include make-col(12);
+
+    @include media-breakpoint-up(md) {
+        @include make-col(6);
+    }
+
+    @include media-breakpoint-up(lg) {
+        @include make-col(6);
+    }
+}
+
+.icon-descrption-wrapper {
+    @include make-row();
+}
+
+.service {
+    @include make-col-ready();
+    @include make-col(12);
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: row;
+    // justify-content: space-between;
+    align-content: flex-start;
+
+    @include media-breakpoint-up(md) {
+        @include make-col(6);
+    }
+
+    @include media-breakpoint-up(lg) {
+        @include make-col(6);
+    }
+}
+
+svg {
+    margin-right: 1em;
+}
+
+// Testimonials
+
+.testimonials {
+    @include make-container();
+
+    @include media-breakpoint-up(lg) {
+        width: 920px;
+    }
+}
+
+.testimonials-wrapper {
+    @include make-row();
+}
+
+.testimonial-card {
+    @include make-col-ready();
+    @include make-col(12);
+    margin-bottom: 1em;
+
+    @include media-breakpoint-up(md) {
+        @include make-col(6);
+    }
+
+    @include media-breakpoint-up(lg) {
+        @include make-col(4);
+    }
+}
+
+// .testimonial {
+//     background-color: #fff;
+// }
+
+.testimonial-description {
+    padding: 15px;
+}
+
+.testimonial figure {
+    width: 40%;
+    height: 40%;
+    margin: 0 auto;
+
+    img {
+        width: 100%;
+        height: 100%;
+        border: 1px;
+        border-radius: 50%;
+    }
+}
+
+.testimonial .name {
+    font-style: italic;
+    font-size: 0.8em;
+    font-weight: 500;
+    color: #555555;
+}
+
+// Footer
+
+footer {
+    padding: 35px 0;
+    background-color: $primary-color;
+}
+
+.row {
+    @include make-row();
+}
+
+footer .links {
+    @include media-breakpoint-up(md) {
+        width: 50%;
+    }
+
+    @include media-breakpoint-up(lg) {
+        width: 50%;
+    }
+}
+
+footer .nav-link {
+    padding-bottom: 1em;
+    border-bottom: 1px #ffffff solid;
+    margin-bottom: 1em;
+}
+
+// Search form
+
+.search-form-wrapper {
+    @include make-container();
+
+    @include media-breakpoint-up(lg) {
+        width: 920px;
+    }
+}
+
+.search-form-content {
+    @include make-row();
+}
+
+.main-search-form {
+    @include make-col-ready;
+    @include make-col(12);
+
+    @include media-breakpoint-up(lg) {
+        @include make-col(6);
+    }
+}
+
+.form {
+    background-color: #fff;
+    padding: 25px;
+    box-shadow: 8px 3px 11px 0px #dfdede;
+}
+
+.f-group {
+    margin-bottom: 1em;
+}
+
+// Aegnts
+
+.agents {
+    @include make-container();
+
+    @include media-breakpoint-up(lg) {
+        width: 920px;
+    }
+}
+
+.agents-wrapper {
+    @include make-row();
+}
+
+.agents-content {
+    @include make-col-ready();
+    @include make-col(6);
+
+    @include media-breakpoint-up(md) {
+        @include make-col(4);
+    }
+
+    @include media-breakpoint-up(lg) {
+        @include make-col(3);
+    }
+}
+
+.agent {
+    text-align: center;
+
+    a {
+        color: $secondary-color;
+    }
+
+    .agent-socials {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+.agent figure {
+    width: 40%;
+    height: 40%;
+    margin: 0 auto;
+    margin-bottom: 1em;
+
+    img {
+        width: 100%;
+        height: 100%;
+        border: 1px;
+        border-radius: 50%;
+    }
+}
+
+.agent-socials-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
