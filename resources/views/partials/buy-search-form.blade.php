@@ -1,6 +1,7 @@
 <div class="main-search-form">
     <div class="form">
-        <form action="rent/properties" method="get">
+         @include('helpers.messages')
+        <form action="buy/properties" method="get">
             <div class="f-group">
                 <label for="location">Location</label><br/>
                 <input type="text" name="location" id="location" placeholder="Search by location, eg. Postcode, City">

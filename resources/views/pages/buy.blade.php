@@ -4,7 +4,7 @@
         <div class="search-form-wrapper">
             <h2>Property to buy</h2>
             <div class="search-form-content">
-                @include('partials.search-form')
+                @include('partials.buy-search-form')
             </div>
         </div>
     </section>
