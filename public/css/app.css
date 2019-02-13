@@ -10847,6 +10847,20 @@ a:hover {
   margin-left: -15px;
 }
 
+.property-link {
+  color: #272727;
+  font-size: 13px;
+}
+
+.property-link:hover {
+  color: #272727;
+}
+
+.price {
+  font-size: 1.3em;
+  color: #00b5e4;
+}
+
 .description-wrapper {
   background-color: #ffffff;
 }
@@ -10875,6 +10889,25 @@ a:hover {
   }
 }
 
+.text-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.bedrooms,
+.bathrooms {
+  display: flex;
+  flex-direction: row;
+  width: 20%;
+}
+
+.bedrooms svg,
+.bathrooms svg {
+  display: inline-block;
+  fill: #00b5e4;
+}
+
 .slider-img-wrapper {
   width: 100%;
 }
@@ -10892,6 +10925,11 @@ a:hover {
 .slider-description {
   padding-right: 15px;
   padding-left: 15px;
+}
+
+.slider-description .icon {
+  display: flex;
+  flex-direction: row;
 }
 
 .btn-wrapper {

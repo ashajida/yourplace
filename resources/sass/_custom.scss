@@ -327,9 +327,25 @@ a:hover {
     @include make-row();
 }
 
+.property-link {
+    color: #272727;
+    font-size: 13px;
+}
+
+.property-link:hover {
+    color: #272727;
+}
+
+.price {
+    font-size: 1.3em;
+    color: $secondary-color;
+}
+
 .description-wrapper {
     background-color: #ffffff;
 }
+
+.property-bedroom-bathroom {}
 
 .property {
     @include make-col-ready();
@@ -345,6 +361,27 @@ a:hover {
         @include make-col(4);
     }
 }
+
+.text-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.bedrooms,
+.bathrooms {
+    display: flex;
+    flex-direction: row;
+    width: 20%;
+
+    svg {
+        display: inline-block;
+        fill: $secondary-color;
+    }
+
+}
+
+.location {}
 
 .slider-img-wrapper {
     width: 100%;
@@ -363,6 +400,12 @@ a:hover {
 .slider-description {
     padding-right: 15px;
     padding-left: 15px;
+
+    .icon {
+        display: flex;
+        flex-direction: row;
+        // justify-content: space-between;
+    }
 }
 
 .btn-wrapper {

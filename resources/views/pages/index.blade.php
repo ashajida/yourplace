@@ -7,19 +7,7 @@
                 <div class="property-listings-slider-items"> 
                     @if ($posts)
                         @foreach ( $posts as $post )
-                                <div class="property">
-                                    <div class="content-wrapper">
-                                        <figure class="slider-img-wrapper"><img src="{{ asset('img/property-2.jpg') }}" alt=""></figure> 
-                                        <div class="slider-description">
-                                            <p>{{ $post->title }}</p> 
-                                            <p>{{ $post->postcode }}</p> 
-                                            <p>{{ $post->price }}</p> 
-                                        </div>
-                                        <div class="btn-wrapper">
-                                        <a class="_btn" href="/posts/{{ $post->id }}">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
+                            @include('partials.property')
                         @endforeach
                     @else
                         <p>No recent properties<p>   
