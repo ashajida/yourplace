@@ -3,7 +3,6 @@
         <div class="content-wrapper">
             <figure class="slider-img-wrapper"><img src="{{ asset('img/property-2.jpg') }}" alt="{{ $post->title }}"></figure> 
             <div class="property-bedroom-bathroom">
-
             </div>
             <div class="slider-description">
                 <div class="text-wrapper">
