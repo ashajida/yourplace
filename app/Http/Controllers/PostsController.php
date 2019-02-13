@@ -113,31 +113,31 @@ class PostsController extends Controller
      */
     public function fetchProperties(Request $request)
     {
+        // Validator
+        $request->validate([
+            'location' => 'required',
+            'num-beds' => 'required',
+            'price' => 'required',
+            'property-status' => 'required',
+        ]);
 
-        $location = "";
-        $bedrooms = "";
-        $price = "";
-        $property_status = "";
-        $posts = array();
-        
-        if ($request->has(['location', 'bedrooms', 'price', 'property-status'])) {
-            
-            $location = $request->input('location');
-            $bedrooms = $request->input('bedrooms');
-            $price = $request->input('price');
-            $property_status = $request->input('property-status');
+        // Input Variables
+        $location = $request->input('location');
+        $bedrooms = $request->input('num-beds');
+        $price = $request->input('price');
+        $property_status = $request->input('property-status');
 
-            $posts = Post::where('location', $location)
+        $posts = Post::where('location', $location)
                 ->orWhere('postcode', $location)
                 ->where('property_status', $property_status)
-                ->where('bedrooms', $property_status)
-                ->where('price', $price)
-                ->take(10)->get();
+                ->where('bedrooms', '<=', $bedrooms)
+                ->where('price', '<=', $price)
+                ->take(10)
+                ->get();
 
-            $data = array('show_hero' => false);
+        $data = array('show_hero' => false);
 
-            return view('posts.show')->with('data', $data)->with('post', $post);
-        }
+        return view('posts.show')->with('data', $data)->with('posts', $posts);
         
     }
 }
