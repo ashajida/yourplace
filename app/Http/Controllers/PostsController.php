@@ -137,7 +137,7 @@ class PostsController extends Controller
 
         $data = array('show_hero' => false);
 
-        return view('posts.show')->with('data', $data)->with('posts', $posts);
+        return view('posts.results')->with('data', $data)->with('posts', $posts);
         
     }
 }
