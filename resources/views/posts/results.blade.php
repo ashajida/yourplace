@@ -1,9 +1,9 @@
 @extends('layouts.app')
 @section('content')
     <section class="section-search-results">
-            @include('partials.filter-search-form');
             <div class="wrapper">
                 <div class="results">
+                     @include('partials.filter-search-form')
                     @if (!$posts)
                         <div class="empty-posts">
                             No posts found

@@ -669,10 +669,17 @@ footer .nav-link {
 
 // Results
 
-// .results-wrapper {
-//     @include make-container();
+.filter-search-form {
+    @include make-col-ready();
+    @include make-col(12);
+    margin-bottom: 1em;
+    // box-shadow: #f0f0f0;
 
-//     @include media-breakpoint-up(lg) {
-//         width: 920px;
-//     }
-// }
+    @include media-breakpoint-up(md) {
+        @include make-col(6);
+    }
+
+    @include media-breakpoint-up(lg) {
+        @include make-col(4);
+    }
+}
