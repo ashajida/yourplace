@@ -4,8 +4,6 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
-
 window.Vue = require('vue');
 
 /**
@@ -31,9 +29,4 @@ const app = new Vue({
     el: '#app'
 });
 
-const filter_search_form = document.querySelector('.filter-search-form');
-const filter = document.querySelector('.filter-btn');
-
-filter.addEventListener('click', () => {
-    console.log('clicked');
-})
+require('./custom-app');

@@ -11279,12 +11279,21 @@ footer .nav-link {
   height: 0;
   overflow: hidden;
   margin-bottom: 1em;
+  transition: all 0.5s;
   position: relative;
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
   flex: 0 0 100%;
   max-width: 100%;
+}
+
+.filter-active {
+  height: 453.52px;
+}
+
+.filter-btn {
+  cursor: pointer;
 }
 
 .results {

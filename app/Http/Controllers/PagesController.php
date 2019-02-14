@@ -18,7 +18,7 @@ class PagesController extends Controller
     public function index()
     {
         $data = array( 'title' => 'Homepage', 'show_hero' => true );
-        $posts = Post::all();
+        $posts = Post::all()->take(3);
 
         return view('pages.index')->with('data', $data)->with('posts', $posts);
     }
