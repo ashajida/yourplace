@@ -1,4 +1,3 @@
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -31,3 +30,10 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app'
 });
+
+const filter_search_form = document.querySelector('.filter-search-form');
+const filter = document.querySelector('.filter-btn');
+
+filter.addEventListener('click', () => {
+    console.log('clicked');
+})

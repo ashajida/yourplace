@@ -47956,6 +47956,11 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 var app = new Vue({
   el: '#app'
 });
+var filter_search_form = document.querySelector('.filter-search-form');
+var filter = document.querySelector('.filter-btn');
+filter.addEventListener('click', function () {
+  console.log('clicked');
+});
 
 /***/ }),
 
