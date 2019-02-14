@@ -11276,27 +11276,31 @@ footer .nav-link {
 }
 
 .filter-search-form {
+  height: 0;
+  overflow: hidden;
+  margin-bottom: 1em;
+  transition: all 0.5s;
   position: relative;
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
   flex: 0 0 100%;
   max-width: 100%;
-  margin-bottom: 1em;
 }
 
-@media (min-width: 768px) {
-  .filter-search-form {
-    flex: 0 0 50%;
-    max-width: 50%;
-  }
+.filter-active {
+  height: 453.52px;
 }
 
-@media (min-width: 992px) {
-  .filter-search-form {
-    flex: 0 0 33.3333333333%;
-    max-width: 33.3333333333%;
-  }
+.filter-btn {
+  cursor: pointer;
+}
+
+.results {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
 }
 
 .navbar-laravel {

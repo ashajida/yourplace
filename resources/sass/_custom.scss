@@ -345,7 +345,8 @@ a:hover {
     background-color: #ffffff;
 }
 
-.property-bedroom-bathroom {}
+.property-bedroom-bathroom {
+}
 
 .property {
     @include make-col-ready();
@@ -378,10 +379,10 @@ a:hover {
         display: inline-block;
         fill: $secondary-color;
     }
-
 }
 
-.location {}
+.location {
+}
 
 .slider-img-wrapper {
     width: 100%;
@@ -670,16 +671,25 @@ footer .nav-link {
 // Results
 
 .filter-search-form {
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 1em;
+    transition: all 0.5s;
+
     @include make-col-ready();
     @include make-col(12);
-    margin-bottom: 1em;
+
     // box-shadow: #f0f0f0;
+}
 
-    @include media-breakpoint-up(md) {
-        @include make-col(6);
-    }
+.filter-active {
+    height: 453.52px;
+}
 
-    @include media-breakpoint-up(lg) {
-        @include make-col(4);
-    }
+.filter-btn {
+    cursor: pointer;
+}
+
+.results {
+    @include make-row();
 }

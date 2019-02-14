@@ -1,18 +1,16 @@
 <div class="filter-search-form">
     <div class="form">
         <form action="rent/properties" method="get">
-            <div class="f-group">
+
                 <label for="location">Location</label><br/>
                 <input type="text" name="location" id="location" placeholder="Search by location, eg. Postcode, City">
-            </div>
-            <div class="f-group">
+
                 <label for="property-status">Property status</label><br/>
                 <select name="property-status" id="property-status">
                     <option value="house">House</option>
                     <option values="flat">Flat</option>
                     <option values="studio">Studio</option>
                 </select>
-            </div>
             <div class="f-group">
                 <label for="num-beds">Bedrooms</label><br/>
                 <input type="range" list="tickmarks" class="slider" name="num-beds" min="1" max="5" id="num-beds">
