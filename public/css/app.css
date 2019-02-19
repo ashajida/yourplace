@@ -10623,8 +10623,14 @@ a:hover {
   border-radius: 7px;
   color: #fff;
   width: 100px;
+  height: auto;
   text-align: center;
   font-size: 14px;
+}
+
+._btn-ghost:hover {
+  background-color: #2ee4b1;
+  color: #fff;
 }
 
 ._btn:hover {
@@ -10666,6 +10672,7 @@ a:hover {
     flex-direction: row;
     justify-content: space-between;
     height: auto;
+    width: 50%;
   }
 }
 
@@ -10674,33 +10681,16 @@ a:hover {
     flex-direction: row;
     justify-content: space-between;
     height: auto;
+    width: 50%;
   }
 }
 
 .nav-link {
-  padding-bottom: 1em;
-  border-bottom: 1px #ffffff solid;
-  margin-bottom: 1em;
+  padding: 0.5em;
   font-size: 12px;
 }
 
-@media (min-width: 768px) {
-  .nav-link {
-    padding-bottom: 0;
-    margin-bottom: 0;
-    border-bottom: none;
-  }
-}
-
-@media (min-width: 992px) {
-  .nav-link {
-    padding-bottom: 0;
-    margin-bottom: 0;
-    border-bottom: none;
-  }
-}
-
-.nav-links:hover {
+.nav-link:hover {
   color: #f0f0f0;
   text-decoration: none;
 }
@@ -11301,6 +11291,10 @@ footer .nav-link {
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
+}
+
+.auth-form {
+  padding: 35px 0;
 }
 
 .navbar-laravel {

@@ -6,7 +6,14 @@
                 <label for="location">Location</label><br/>
                 <input type="text" name="location" id="location" placeholder="Search by location, eg. Postcode, City">
             </div>
-            <input hidden name="property-status" value="rent">
+            <div class="f-group">
+                <label for="property-status">Type of property</label>
+                <select id="property-status" name="property-status">
+                    <option value="flat">Flat</option>
+                    <option value="house">House</option>
+                <select>
+            </div>
+            <input hidden name="type" value="rent">
             <div class="f-group">
                 <label for="num-beds">Bedrooms</label><br/>
                 <input type="range" list="tickmarks" class="slider" name="num-beds" min="1" max="5" id="num-beds">

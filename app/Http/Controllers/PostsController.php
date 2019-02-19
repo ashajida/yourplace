@@ -118,6 +118,7 @@ class PostsController extends Controller
             'location' => 'required',
             'num-beds' => 'required',
             'price' => 'required',
+            'type' => 'required',
             'property-status' => 'required',
         ]);
 
@@ -125,19 +126,19 @@ class PostsController extends Controller
         $location = $request->input('location');
         $bedrooms = $request->input('num-beds');
         $price = $request->input('price');
+        $type = $request->input('type');
         $property_status = $request->input('property-status');
 
         $posts = Post::where('location', $location)
-                ->orWhere('postcode', $location)
-                ->where('property_status', $property_status)
+                // ->where('postcode', $location)
+                ->where('type', $type)
                 ->where('bedrooms', '<=', $bedrooms)
                 ->where('price', '<=', $price)
+                ->where('property_status', $property_status)
                 ->take(10)
                 ->get();
 
-        $data = array('show_hero' => false);
-
-        return view('posts.results')->with('data', $data)->with('posts', $posts);
+        return view('posts.results')->with('posts', $posts);
         
     }
 }
