@@ -10504,6 +10504,16 @@ h3 {
   margin-bottom: 1em;
 }
 
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  display: inline-block;
+}
+
 section {
   padding: 35px 0;
 }
@@ -10642,7 +10652,7 @@ a:hover {
 .primary-nav-list {
   display: flex;
   flex-direction: column;
-  font-size: 14px;
+  font-size: 16px;
   position: relative;
 }
 
@@ -10665,6 +10675,7 @@ a:hover {
   flex-direction: column;
   height: 0;
   overflow: hidden;
+  font-size: 16px;
 }
 
 @media (min-width: 768px) {
@@ -10673,6 +10684,7 @@ a:hover {
     justify-content: space-between;
     height: auto;
     width: 50%;
+    overflow: visible;
   }
 }
 
@@ -10682,12 +10694,23 @@ a:hover {
     justify-content: space-between;
     height: auto;
     width: 50%;
+    overflow: visible;
   }
+}
+
+.nav-links .dropdown-item:first-child {
+  color: #fff;
+  font: 12px;
+}
+
+.nav-links .dropdown-menu.show {
+  background-color: #00b5e4;
+  border: 1px solid #00b5e4;
 }
 
 .nav-link {
   padding: 0.5em;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .nav-link:hover {
