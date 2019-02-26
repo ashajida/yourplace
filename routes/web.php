@@ -21,7 +21,8 @@ Route::resource('posts', 'PostsController');
 Route::get('/rent/properties', 'PostsController@fetchProperties');
 Route::get('/buy/properties', 'PostsController@fetchProperties');
 
-Route::resource('users', 'UsersController');
 Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+Route::get('/dashboard/post/{post}', 'DashboardController@show')->name('show-single');
+Route::get('/dashboard/create-post', 'DashboardController@createPost')->name('create-post');

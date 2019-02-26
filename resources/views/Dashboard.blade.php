@@ -1,23 +1,48 @@
 @extends('layouts.app')
-
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
+<section class="section-user-profile">
+    <div class="user-profile">
+        <div class="wrapper">
+            <div class="profile">
+                {{  Auth::user()->name }}            
+            </div>
+            <div>
+                <a href="/dashboard/create-post" class="_btn">Add property</a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section-property-posts">
+    <div class="property-posts">
+        <div class="wrapper">
+            <div class="property-posts-wrapper">
+                <div class="posts-table">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Image</th>
+                                <th scope="col">Postcode</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">Title</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                    <tbody>
+                        @foreach ($posts as $post)
+                            <tr>
+                                <td><img style="width: 150px; height: 150px;"src="{{ asset("img/$post->image_cover") }}"></td>
+                                <td>{{ $post->postcode }}</td>
+                                <td>{{ $post->address }}</</td>
+                                <td>{{ $post->title }}</</td>
+                                <td><a href="/dashboard/post/{{ $post->id }}" class="_btn">View</a></</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                    </table>
+                    
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 @endsection
