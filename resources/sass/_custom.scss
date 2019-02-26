@@ -44,7 +44,8 @@ section {
 
 // Inputs
 
-input[type="text"] {
+input[type="text"],
+textarea {
     padding: 0.5em;
     width: 100%;
     margin-bottom: 1em;
@@ -53,6 +54,10 @@ input[type="text"] {
     border-radius: 7px;
     outline-color: $primary-color;
     outline-width: thin;
+}
+
+textarea {
+    height: 200px;
 }
 
 input[type="submit"],
@@ -717,4 +722,24 @@ footer .nav-link {
 
 .auth-form {
     padding: 35px 0;
+}
+
+.creat-post {
+    @include make-row();
+}
+
+.create-post-wrapper {
+    @include make-col-ready();
+    @include make-col(12);
+
+    @include media-breakpoint-up(md) {
+        @include make-col(8);
+        @include make-col-offset(3);
+    }
+
+    @include media-breakpoint-up(lg) {
+        @include make-col(8);
+        @include make-col-offset(3);
+    }
+
 }

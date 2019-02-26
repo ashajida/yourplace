@@ -10523,7 +10523,8 @@ section {
   color: #555555;
 }
 
-input[type=text] {
+input[type=text],
+textarea {
   padding: 0.5em;
   width: 100%;
   margin-bottom: 1em;
@@ -10532,6 +10533,10 @@ input[type=text] {
   border-radius: 7px;
   outline-color: #2ee4b1;
   outline-width: thin;
+}
+
+textarea {
+  height: 200px;
 }
 
 input[type=submit],
@@ -11318,6 +11323,38 @@ footer .nav-link {
 
 .auth-form {
   padding: 35px 0;
+}
+
+.creat-post {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.create-post-wrapper {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .create-post-wrapper {
+    flex: 0 0 66.6666666667%;
+    max-width: 66.6666666667%;
+    margin-left: 25%;
+  }
+}
+
+@media (min-width: 992px) {
+  .create-post-wrapper {
+    flex: 0 0 66.6666666667%;
+    max-width: 66.6666666667%;
+    margin-left: 25%;
+  }
 }
 
 .navbar-laravel {
