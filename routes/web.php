@@ -25,4 +25,4 @@ Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 Route::get('/dashboard/post/{post}', 'DashboardController@show')->name('show-single');
-Route::get('/dashboard/create-post', 'DashboardController@createPost')->name('create-post');
+Route::get('/dashboard/create', 'DashboardController@createPost')->name('create-post');

@@ -42,7 +42,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -53,7 +53,57 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        
+          // Validator
+          $request->validate([
+            'address' => 'required',
+            'bathrooms' => 'required',
+            'bedrooms' => 'required',
+            'postcode' => 'required',
+            'title' => 'required',
+            'body' => 'required',
+            'cover_image' => 'image|nullable|max:1999',
+        ]);
+
+        // Handle File Upload
+        if($request->hasFile('cover_image'))
+        {
+            // Get filename with ext
+            $filename_with_ext = $request->file('cover_image')->getClientOriginalName();
+
+            // filename
+            $filename = pathinfo($filename_with_ext, PATHINFO_FILENAME);
+
+            //Extension
+            $extension = $request->file('cover_image')->guessClientExtension();
+
+            // Filename to store
+            $filename_to_store = $filename.'_'.time().'.'.$extension;
+
+            // Upload the image
+            $path = $request->file('cover_image')->storeAs('public/cover_images', $filename_to_store);
+        } else {
+            $filename_to_store = 'noimage.jpg';
+        }
+
+
+
+        // Input Variables
+        $post = new Post();
+        $post->title = $request->input('title');
+        $post->bedrooms = $request->input('bedrooms');
+        $post->bathrooms = $request->input('bathrooms');
+        $post->address = $request->input('address');
+        $post->postcode = $request->input('postcode');
+        $post->body = $request->input('body');
+        $post->price = 500.000;
+        $post->property_status = 'Rent';
+        $post->type = 'House';
+        $post->location = 'Nottingham';
+        $post->user_id = auth()->user()->id;
+        $post->image_cover = $filename_to_store;
+        $post->save();
+
+        return redirect('/dashboard')->with('success', 'Propery Added');
 
     }
 

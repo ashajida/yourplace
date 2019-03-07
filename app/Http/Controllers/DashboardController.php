@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Post;
+use App\User;
 
 class DashboardController extends Controller
 {
@@ -25,8 +26,9 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $posts = Post::all()->take(3);
-        return view('dashboard')->with('posts', $posts);
+        $user_id = auth()->user()->id;
+        $user = User::find($user_id);
+        return view('dashboard')->with('posts', $user->posts);
     }
 
     public function show($id)
