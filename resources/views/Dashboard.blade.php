@@ -7,7 +7,7 @@
                 {{  Auth::user()->name }}            
             </div>
             <div>
-                <a href="/dashboard/create-post" class="_btn">Add property</a>
+                <a href="/dashboard/create" class="_btn">Add property</a>
             </div>
         </div>
     </div>
@@ -17,6 +17,7 @@
         <div class="wrapper">
             <div class="property-posts-wrapper">
                 <div class="posts-table">
+                @if(count($posts) > 0)
                     <table class="table">
                         <thead>
                             <tr>
@@ -39,6 +40,9 @@
                         @endforeach
                     </tbody>
                     </table>
+                    @else
+                        <p>You have no posts<p>
+                @endif
                     
                 </div>
             </div>

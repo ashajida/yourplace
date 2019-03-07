@@ -5,7 +5,8 @@
         <div class="creat-post">
             <div class="create-post-wrapper">
                 <h2>Add new property</h2>
-                <form action="" method="post">
+                <form action="/posts" method="post" encrypt="multipart/form-data">
+                    @csrf
                     <div class="f-group">
                         <label>Select image</label><br/>
                         <input type="file" name="cover_image" accept="image/png,/image/jpeg, image/jpg">
