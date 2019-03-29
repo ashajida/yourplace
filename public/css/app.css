@@ -10608,7 +10608,7 @@ select {
 
 .primary-nav {
   background-color: #00b5e4;
-  padding: 1em;
+  padding: 0.6em 1em;
 }
 
 a {
@@ -10659,6 +10659,7 @@ a:hover {
   flex-direction: column;
   font-size: 16px;
   position: relative;
+  align-items: baseline;
 }
 
 @media (min-width: 768px) {
@@ -10681,6 +10682,7 @@ a:hover {
   height: 0;
   overflow: hidden;
   font-size: 16px;
+  transition: 0.5s height ease-in-out;
 }
 
 @media (min-width: 768px) {
@@ -10714,7 +10716,7 @@ a:hover {
 }
 
 .nav-link {
-  padding: 0.5em;
+  padding: 0.5em 0;
   font-size: 14px;
 }
 
@@ -10724,27 +10726,24 @@ a:hover {
 }
 
 .burger-menu {
-  background-color: #2ee4b1;
-  width: 30px;
-  height: 30px;
   position: absolute;
-  top: 0;
   right: 0;
+  top: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   cursor: pointer;
-  border: 1px;
-  border-radius: 3px;
 }
 
-.burger-menu div {
-  background-color: #ffffff;
-  height: 3px;
-  width: 80%;
-  border: 1px;
-  border-radius: 8px;
-  margin: 0 auto;
+.burger-menu .line {
+  background-color: #fff;
+  height: 2px;
+  width: 38px;
+  margin-bottom: 8px;
+}
+
+.burger-menu .line:first-child {
+  width: 30px;
 }
 
 @media (min-width: 768px) {
@@ -10757,6 +10756,16 @@ a:hover {
   .burger-menu {
     display: none;
   }
+}
+
+.open {
+  height: 218px;
+}
+
+.logo {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .hero {

@@ -1,5 +1,4 @@
 <nav class="primary-nav">
-    <div class="wrapper">
         <div class="primary-nav-list">
             <div class="logo">
                 <a href="{{ url('/') }}">Yourplace</a>
@@ -37,10 +36,9 @@
                         @endguest
             </div>
             <div class="burger-menu">
-                <div></div>
-                <div></div>
-                <div></div>
+                <div class="line"></div>
+                <div  class="line"></div>
+                <div  class="line"></div>
             </div>
         </div>
-    </div>
 </nav>

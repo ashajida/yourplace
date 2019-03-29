@@ -5,4 +5,5 @@ filter.addEventListener('click', () => {
     filter_search_form.classList.toggle('filter-active');
 });
 
+
 console.log('loaded');
