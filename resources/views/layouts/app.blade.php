@@ -18,7 +18,7 @@
 </head>
          <body>
         <header>
-            @include('partials.navigation')
+                @include('partials.navigation')
             @if(Route::current()->getName('home') === "home")
                 @include('partials.hero')
             @endif

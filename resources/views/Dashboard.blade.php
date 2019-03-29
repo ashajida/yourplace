@@ -4,6 +4,16 @@
     <div class="user-profile">
         <div class="wrapper">
             <div class="profile">
+                <div class="img-wrapper-dashboard">
+                    <img src="#">
+                </div>
+                <div class="dashboard-upload-img">
+                    <form action="/posts" method="post" encrypt="multipart/form-data">
+                    @csrf
+                        <input type="file" name="cover_image" accept="image/png,/image/jpeg, image/jpg">
+                        <input type="submit" placeholder="Upload" class="_btn">
+                    </form>
+                </div>
                 {{  Auth::user()->name }}            
             </div>
             <div>
