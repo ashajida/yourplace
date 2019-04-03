@@ -210,11 +210,15 @@ a:hover {
     @include media-breakpoint-up(md) {
         flex-direction: row;
         justify-content: space-between;
+        margin: 0 auto;
+        width: 920px;
     }
 
     @include media-breakpoint-up(lg) {
         flex-direction: row;
         justify-content: space-between;
+        margin: 0 auto;
+        width: 920px;
     }
 }
 

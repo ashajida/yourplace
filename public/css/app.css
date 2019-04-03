@@ -10685,6 +10685,8 @@ a:hover {
   .primary-nav-list {
     flex-direction: row;
     justify-content: space-between;
+    margin: 0 auto;
+    width: 920px;
   }
 }
 
@@ -10692,6 +10694,8 @@ a:hover {
   .primary-nav-list {
     flex-direction: row;
     justify-content: space-between;
+    margin: 0 auto;
+    width: 920px;
   }
 }
 

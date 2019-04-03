@@ -18,10 +18,10 @@ class UsersController extends Controller
         /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function update(Request $request)
     {
                   // Validator
                 $request->validate([

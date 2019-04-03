@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Update Profile Picture') }}</div>
 
                 <div class="card-body">
-                        <form  action="/profile/edit" method="post" enctype="multipart/form-data">
+                        <form  action="/users/update" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="f-group">
                                 <label>Select image</label><br/>
