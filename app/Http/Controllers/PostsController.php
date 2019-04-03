@@ -25,13 +25,13 @@ class PostsController extends Controller
             $location = $request->input('location');
     
             $posts = Post::where('location', $location)
-            ->orWhere('postcode', $location)->orderBy('title', 'desc')->take(10)->get();
+            ->orderBy('title', 'desc')->take(10)->get();
 
             $data = array(
                 'show_hero' => false,
             );
 
-            return view('posts.index')->with( 'data', $data)->with('posts', $posts );
+            return view('posts.results')->with( 'data', $data)->with('posts', $posts );
         }
 
     
@@ -160,6 +160,12 @@ class PostsController extends Controller
     public function destroy($id)
     {
         //
+        $res = Post::find($id);
+        $res->delete();
+
+        return redirect('/dashboard')->with('sucess', 'Post Deleted');
+
+
     }
 
     /**
@@ -187,11 +193,10 @@ class PostsController extends Controller
         $property_status = $request->input('property-status');
 
         $posts = Post::where('location', $location)
-                // ->where('postcode', $location)
-                ->where('type', $type)
+                ->where('property_status', $property_status)
                 ->where('bedrooms', '<=', $bedrooms)
                 ->where('price', '<=', $price)
-                ->where('property_status', $property_status)
+                ->where('type', $type)
                 ->take(10)
                 ->get();
 

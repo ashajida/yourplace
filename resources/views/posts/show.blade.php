@@ -22,13 +22,9 @@
                                 <img style="width: 100px; height: 100px;" src="/storage/cover_images/{{$agent->cover_image}}">
                                 <p>{{ $agent->name }}&nbsp;{{ $agent->lastname }}</p>
                             </div>
-                            <div class="message-form">
-                                <h5>Contact Agent<h5>
-                                <form id="message-form">
-                                    <textarea type="text" name="message" form="message-form"></textarea>
-                                    <input type="submit">
-                                    <input hidden value="">
-                                </form>
+                            <div id="messenger" class="message-form">
+                                <h5>Contact Agent</h5>
+                                <Messenger />
                             </div>   
                                 @endif
                             </div>

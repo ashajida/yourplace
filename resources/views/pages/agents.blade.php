@@ -4,7 +4,7 @@
         <div class="agents">
             <h2>Agents</h2>
             <div class="agents-wrapper">
-                <div class="agents-content">
+     
                     @if ($agents)
                         @foreach ( $agents as $agent )
                             <div class="agent">
@@ -45,7 +45,7 @@
                             </div>
                         @endforeach
                     @endif
-                </div>
+               
             </div>  
         </div>
     </section>

@@ -6,4 +6,18 @@ burgerBtn.addEventListener('click', function () {
     console.log('clicked');
 })
 
-console.log('clicked');
+window.Vue = require('vue');
+
+Vue.component(
+    'Messenger',
+    require('./components/Messenger.vue').default
+)
+
+new Vue({
+    el: '#messenger',
+    data() {
+        return {
+            messageBody: ""
+        }
+    },
+})

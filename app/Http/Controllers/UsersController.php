@@ -49,9 +49,11 @@ class UsersController extends Controller
                     $filename_to_store = 'noimage.jpg';
                 }
 
+        
+        $id = auth()->user()->id;
         User::find($id)->update(['cover_image' => $filename_to_store]);
         
-        return view('dashboard');
+        return redirect('/dashboard');
 
     }
 

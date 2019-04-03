@@ -6,7 +6,7 @@
     </div>
     <div class="hero-search-form">
         <form action="/posts" method="get">
-            <input type="text" name="location" placeholder="Search by location, eg. Postcode, City">
+            <input type="text" name="location" placeholder="Search by location, eg. London">
             <input type="submit" value="Search">
         </form>
     </div>

@@ -10673,6 +10673,16 @@ a:hover {
   color: #fff;
 }
 
+.danger {
+  background-color: #ee1d1d;
+  border: 1px solid #ee1d1d;
+}
+
+.danger:hover {
+  background-color: #c71818;
+  border: 1px solid #c71818;
+}
+
 .primary-nav-list {
   display: flex;
   flex-direction: column;
@@ -11200,13 +11210,17 @@ footer {
 
 @media (min-width: 768px) {
   footer .links {
-    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-self: center;
   }
 }
 
 @media (min-width: 992px) {
   footer .links {
-    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-self: center;
   }
 }
 
@@ -11214,6 +11228,78 @@ footer .nav-link {
   padding-bottom: 1em;
   border-bottom: 1px #ffffff solid;
   margin-bottom: 1em;
+}
+
+footer .nav-link:last-of-type {
+  border-bottom: none;
+}
+
+@media (min-width: 992px) {
+  footer .nav-link {
+    border-bottom: none;
+    position: relative;
+  }
+
+  footer .nav-link:last-of-type::after {
+    content: none;
+  }
+
+  footer .nav-link {
+    border-bottom: none;
+    position: relative;
+  }
+
+  footer .nav-link::after {
+    content: "";
+    height: 100%;
+    width: 3px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 50px;
+    transition: all 0.5s;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+    position: absolute;
+    left: 100px;
+    top: 0;
+    background-color: #fff;
+  }
+}
+
+@media (min-width: 768px) {
+  footer .nav-link {
+    border-bottom: none;
+    position: relative;
+  }
+
+  footer .nav-link:last-of-type::after {
+    content: none;
+  }
+
+  footer .nav-link {
+    border-bottom: none;
+    position: relative;
+  }
+
+  footer .nav-link::after {
+    content: "";
+    height: 100%;
+    width: 3px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 50px;
+    transition: all 0.5s;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+    position: absolute;
+    left: 100px;
+    top: 0;
+    background-color: #fff;
+  }
 }
 
 .search-form-wrapper {
@@ -11282,9 +11368,10 @@ footer .nav-link {
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
+  justify-content: space-between;
 }
 
-.agents-content {
+.agent {
   position: relative;
   width: 100%;
   padding-right: 15px;
@@ -11294,14 +11381,14 @@ footer .nav-link {
 }
 
 @media (min-width: 768px) {
-  .agents-content {
+  .agent {
     flex: 0 0 33.3333333333%;
     max-width: 33.3333333333%;
   }
 }
 
 @media (min-width: 992px) {
-  .agents-content {
+  .agent {
     flex: 0 0 25%;
     max-width: 25%;
   }
@@ -11469,6 +11556,17 @@ footer .nav-link {
   font-style: italic;
   color: #494949;
   font-size: 14px;
+}
+
+.profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 1.5em;
+}
+
+.profile .name {
+  width: 60%;
 }
 
 .navbar-laravel {
