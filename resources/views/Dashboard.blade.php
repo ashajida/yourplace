@@ -11,7 +11,7 @@
                 {{  Auth::user()->name }}            
             </div>
             <div>
-                <a href="/dashboard/create" class="_btn">Add property</a>
+                <a href="/posts/create" class="_btn">Add property</a>
             </div>
         </div>
     </div>

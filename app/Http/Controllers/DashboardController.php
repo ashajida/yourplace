@@ -38,7 +38,4 @@ class DashboardController extends Controller
         return view('show')->with('post', $posts);
     }
 
-    public function createPost() {
-        return view('create');
-    }
 }
