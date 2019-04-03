@@ -5,15 +5,9 @@
         <div class="wrapper">
             <div class="profile">
                 <div class="img-wrapper-dashboard">
-                    <img src="#">
+                   <img src="/storage/cover_images/{{$user->cover_image}}">
                 </div>
-                <div class="dashboard-upload-img">
-                    <form action="/posts" method="post" encrypt="multipart/form-data">
-                    @csrf
-                        <input type="file" name="cover_image" accept="image/png,/image/jpeg, image/jpg">
-                        <input type="submit" placeholder="Upload" class="_btn">
-                    </form>
-                </div>
+                <a class="change-profile-pic" href="/users/edit">Update Picture</a>
                 {{  Auth::user()->name }}            
             </div>
             <div>
@@ -41,7 +35,7 @@
                     <tbody>
                         @foreach ($posts as $post)
                             <tr>
-                                <td><img style="width: 150px; height: 150px;"src="{{ asset("img/$post->image_cover") }}"></td>
+                                <td><img style="width: 150px; height: 150px;" src="/storage/cover_images/{{$post->image_cover}}"></td>
                                 <td>{{ $post->postcode }}</td>
                                 <td>{{ $post->address }}</</td>
                                 <td>{{ $post->title }}</</td>

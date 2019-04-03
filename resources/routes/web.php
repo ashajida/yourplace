@@ -1,5 +1,7 @@
 <?php
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,3 +28,7 @@ Auth::routes();
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 Route::get('/dashboard/post/{post}', 'DashboardController@show')->name('show-single');
 Route::get('/dashboard/create', 'DashboardController@createPost')->name('create-post');
+
+// Route::get('/users/edit', 'UsersController@index');
+
+// Route::post('/profile/edit', 'UsersController@edit');

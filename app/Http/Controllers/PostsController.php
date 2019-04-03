@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\User;
 
 class PostsController extends Controller
 {
@@ -32,6 +33,7 @@ class PostsController extends Controller
 
             return view('posts.index')->with( 'data', $data)->with('posts', $posts );
         }
+
     
     }
 
@@ -58,10 +60,13 @@ class PostsController extends Controller
             'address' => 'required',
             'bathrooms' => 'required',
             'bedrooms' => 'required',
-            'postcode' => 'required',
+            'location' => 'required',
+            'price' => 'required',
             'title' => 'required',
+            'property-type' => 'required',
+            'status' => 'required',
             'body' => 'required',
-            'cover_image' => 'image|nullable|max:1999',
+            'cover_image' => 'image|nullable|max:1999'
         ]);
 
         // Handle File Upload
@@ -93,17 +98,16 @@ class PostsController extends Controller
         $post->bedrooms = $request->input('bedrooms');
         $post->bathrooms = $request->input('bathrooms');
         $post->address = $request->input('address');
-        $post->postcode = $request->input('postcode');
+        $post->location = $request->input('location');
         $post->body = $request->input('body');
-        $post->price = 500.000;
-        $post->property_status = 'Rent';
-        $post->type = 'House';
-        $post->location = 'Nottingham';
+        $post->price = $request->input('price');;
+        $post->property_status = $request->input('status');
+        $post->type = $request->input('property-type');;
         $post->user_id = auth()->user()->id;
         $post->image_cover = $filename_to_store;
         $post->save();
 
-        return redirect('/dashboard')->with('success', 'Propery Added');
+        return redirect('/dashboard')->with('success', 'Property Added');
 
     }
 
@@ -116,9 +120,12 @@ class PostsController extends Controller
     public function show($id)
     {
         $post = Post::find($id);
+        $user_id = $post->user_id;
         $data = array('show_hero' => false);
         
-        return view('posts.show')->with('data', $data)->with('post', $post);
+        $agent = User::find($user_id);
+
+        return view('posts.show')->with('data', $data)->with('post', $post)->with('agent', $agent);
     }
 
     /**

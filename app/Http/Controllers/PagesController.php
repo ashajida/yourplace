@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
 
 use App\Post;
+use App\User;
 
 class PagesController extends Controller
 {
@@ -41,9 +42,14 @@ class PagesController extends Controller
 
     public function agents()
     {
+        
+        $type = 'agent';
+
+        $agents = User::where('user_type', $type)->get();
+
         $data = array( 'title' => 'Agents', 'show_hero' => false );
 
-        return view('pages.agents')->with('data', $data);
+        return view('pages.agents')->with('data', $data)->with('agents', $agents);
     }
 
 }

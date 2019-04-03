@@ -1,0 +1,58 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+use App\User;
+
+class UsersController extends Controller
+{   
+    function index()
+    {
+        return view('users.edit');
+    }
+
+
+    
+        /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+                  // Validator
+                $request->validate([
+                    'cover_image' => 'image|nullable|max:1999',
+                ]);
+        
+                // Handle File Upload
+                if($request->hasFile('cover_image'))
+                {
+                    // Get filename with ext
+                    $filename_with_ext = $request->file('cover_image')->getClientOriginalName();
+        
+                    // filename
+                    $filename = pathinfo($filename_with_ext, PATHINFO_FILENAME);
+        
+                    //Extension
+                    $extension = $request->file('cover_image')->guessClientExtension();
+        
+                    // Filename to store
+                    $filename_to_store = $filename.'_'.time().'.'.$extension;
+        
+                    // Upload the image
+                    $path = $request->file('cover_image')->storeAs('public/cover_images', $filename_to_store);
+                } else {
+                    $filename_to_store = 'noimage.jpg';
+                }
+
+        User::find($id)->update(['cover_image' => $filename_to_store]);
+        
+        return view('dashboard');
+
+    }
+
+}

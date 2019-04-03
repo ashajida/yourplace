@@ -25,6 +25,21 @@
                             </div>
                         </div>
 
+                        
+                        <div class="form-group row">
+                            <label for="lastname" class="col-md-4 col-form-label text-md-right">{{ __('Lastname') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="lastname" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="lastname" value="{{ old('lastname') }}" required>
+
+                                @if ($errors->has('lastname'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('lastname') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
@@ -58,6 +73,16 @@
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="user-type" class="col-md-4 col-form-label text-md-right">Account Type</label>
+
+                            <div class="col-md-6">
+                                <select id="user-type" class="form-control" name="user-type" required>
+                                    <option value="standard">Standard</option>
+                                    <option value="agent">Agent</option>
+                                </select>
                             </div>
                         </div>
                         <div class="form-group row mb-0">

@@ -10592,6 +10592,25 @@ select {
   outline: none;
 }
 
+.form-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (min-width: 992px) {
+  .form-wrapper {
+    flex-direction: row;
+  }
+}
+
+.group {
+  width: 48%;
+}
+
+.group .f-group {
+  width: 100%;
+}
+
 .wrapper {
   width: 100%;
   padding-right: 15px;
@@ -10723,6 +10742,22 @@ a:hover {
 .nav-link:hover {
   color: #f0f0f0;
   text-decoration: none;
+}
+
+.dropdown-item {
+  padding: 0;
+}
+
+@media (min-width: 768px) {
+  .dropdown-item {
+    padding: 0.25rem 1.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .dropdown-item {
+    padding: 0.25rem 1.5rem;
+  }
 }
 
 .burger-menu {
@@ -11364,6 +11399,72 @@ footer .nav-link {
     max-width: 66.6666666667%;
     margin-left: 25%;
   }
+}
+
+.single-property {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 992px) {
+  .single-property {
+    width: 920px;
+  }
+}
+
+.single-img-wrapper {
+  width: 100%;
+}
+
+.single-img-wrapper img {
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .single-img-wrapper img {
+    width: 60%;
+  }
+}
+
+@media (min-width: 992px) {
+  .single-img-wrapper img {
+    width: 60%;
+  }
+}
+
+.message-form input {
+  width: 100%;
+}
+
+.message-form textarea {
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .message-form input {
+    width: 50%;
+  }
+
+  .message-form textarea {
+    width: 50%;
+  }
+}
+
+.img-wrapper-dashboard {
+  width: 20%;
+}
+
+.img-wrapper-dashboard img {
+  width: 100%;
+}
+
+.change-profile-pic {
+  font-style: italic;
+  color: #494949;
+  font-size: 14px;
 }
 
 .navbar-laravel {
