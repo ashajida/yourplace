@@ -1,19 +1,19 @@
 <div class="main-search-form">
     <div class="form">
          @include('helpers.messages')
-        <form action="buy/properties" method="get">
+        <form action="/search/properties" method="get">
             <div class="f-group">
                 <label for="location">Location</label><br/>
-                <input type="text" name="location" id="location" placeholder="Search by location, eg. Postcode, City">
+                <input type="text" name="location" id="location" placeholder="Search by location, eg. London">
             </div>
             <div class="f-group">
-                <label for="property-status">Type of property</label>
-                <select id="property-status" name="property-status">
+                <label for="type">Type of property</label>
+                <select id="type" name="type">
                     <option value="flat">Flat</option>
                     <option value="house">House</option>
                 <select>
             </div>
-            <input hidden name="type" value="buy">
+            <input hidden name="property-status" value="sell">
             <div class="f-group">
                 <label for="num-beds">Bedrooms</label><br/>
                 <input type="range" list="tickmarks" class="slider" name="num-beds" min="1" max="5" id="num-beds">

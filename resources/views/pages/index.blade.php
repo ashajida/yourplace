@@ -119,33 +119,33 @@
                     <div class="testimonial-card">
                         <div class="testimonial">
                             <figure>
-                                <img src="{{ asset('img/img-4.jpg') }}" alt="">
+                                <img src="{{ asset('img/testimony-1.jpg') }}" alt="">
                             </figure>
                             <div class="testimonial-description">
                                 <p class="text">&#10077; Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium. &#10078;</p>
-                                <p class="name">Chris Jones</p>
+                                <p class="name">Julie Jones</p>
                             </div>
                         </div>
                     </div>
                     <div class="testimonial-card">
                         <div class="testimonial">
                             <figure>
-                                <img src="{{ asset('img/img-4.jpg') }}" alt="">
+                                <img src="{{ asset('img/testimony-2.jpg') }}" alt="">
                             </figure>
                             <div class="testimonial-description">
                                 <p class="text">&#10077; Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium. &#10078;</p>
-                                <p class="name">Chris Jones</p>
+                                <p class="name">Chris Hawks</p>
                             </div>
                         </div>
                     </div>
                     <div class="testimonial-card">
                         <div class="testimonial">
                             <figure>
-                                <img src="{{ asset('img/img-4.jpg') }}" alt="">
+                                <img src="{{ asset('img/testimony-3.jpg') }}" alt="">
                             </figure>
                             <div class="testimonial-description">
                                 <p class="text">&#10077; Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium. &#10078;</p>
-                                <p class="name">Chris Jones</p>
+                                <p class="name">Neil Thompson</p>
                             </div>
                         </div>
                     </div>

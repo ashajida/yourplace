@@ -20,4 +20,9 @@ class Post extends Model
         return $this->belongsTo('App\User');
     }
 
+    public function savedPost()
+    {
+        return $this->belongsTo('App\SavedPost');
+    }
+
 }

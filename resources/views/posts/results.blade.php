@@ -2,17 +2,18 @@
 @section('content')
     <section class="section-search-results">
             <div class="wrapper">
-                <h4 class="filter-btn">Filter</h4>
-                 @include('partials.filter-search-form')
+               
+                 {{-- @include('partials.filter-search-form') --}}
+                 <h4 class="filter-btn">Results</h4>
                 <div class="results">
-                    @if (!$posts)
-                        <div class="empty-posts">
-                            No posts found
-                        </div>
-                    @else()
+                    @if ($posts)
                         @foreach ($posts as $post )
                             @include('partials.property')
                         @endforeach
+                    @else
+                        <div class="empty-posts">
+                            No posts found
+                        </div>
                     @endif
                 </div>
             </div>
