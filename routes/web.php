@@ -18,8 +18,10 @@ Route::get('/rent', 'PagesController@rent');
 Route::get('/buy', 'PagesController@buy');
 Route::get('/agents', 'PagesController@agents');
 Route::get('/login', 'PagesController@buy');
+Route::get('/update-profile', 'PagesController@updateProfile');
 
 Route::resource('posts', 'PostsController');
+Route::resource('saved-posts', 'SavedPostsController');
 Route::get('/search/properties', 'PostsController@fetchProperties');
 
 
@@ -29,6 +31,9 @@ Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 Route::get('/dashboard/post/{post}', 'DashboardController@show')->name('show-single');
 Route::get('/dashboard/create', 'DashboardController@createPost')->name('create-post');
 
-Route::get('/users/edit', 'UsersController@index');
+Route::resource('users', 'UsersController');
 
 Route::post('/users/update', 'UsersController@update');
+
+Route::put('/users/update-pic/{id}', 'UsersController@updatePic');
+Route::get('/users/{id}/update-profile', 'PagesController@updateProfile');

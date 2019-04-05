@@ -8,8 +8,9 @@
                 <div class="card-header">{{ __('Update Profile Picture') }}</div>
 
                 <div class="card-body">
-                        <form  action="/users/update" method="post" enctype="multipart/form-data">
+                        <form  action="/users/update-pic/{{ $id }}" method="post" enctype="multipart/form-data">
                             @csrf
+                            {{ method_field('PUT') }}
                             <div class="f-group">
                                 <label>Select image</label><br/>
                                 <input type="file" name="cover_image" accept=".jpg, .jpeg, .png" multiple>

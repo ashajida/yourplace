@@ -9,15 +9,19 @@ burgerBtn.addEventListener('click', function () {
 window.Vue = require('vue');
 
 Vue.component(
-    'Messenger',
-    require('./components/Messenger.vue').default
+    'Messenger', {
+        props: 'body',
+        template: require('./components/Messenger.vue')
+    }
 )
+
+
 
 new Vue({
     el: '#messenger',
     data() {
         return {
-            messageBody: ""
+            body: ""
         }
     },
 })

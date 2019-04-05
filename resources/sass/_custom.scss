@@ -42,6 +42,16 @@ section {
     color: #555555;
 }
 
+// Table
+.table {
+    background-color: #00b5e4;
+    color: #fff;
+
+    tr:nth-child(odd) {
+        background-color: #038aac;
+    }
+}
+
 // Inputs
 
 input[type="text"],
@@ -954,6 +964,26 @@ footer {
 
 }
 
+.price-icon {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5em;
+}
+
+.save-icon {
+    i {
+        color: #ccc;
+        font-size: 1.6em;
+        cursor: pointer;
+    }
+
+    button {
+        border: none;
+        background-color: #f8fafc;
+        outline: none;
+    }
+}
+
 
 // Dashboard
 .img-wrapper-dashboard {
@@ -971,6 +1001,8 @@ footer {
 }
 
 .profile {
+    padding: 1em;
+    background-color: #fff;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

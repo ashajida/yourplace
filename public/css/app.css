@@ -10523,6 +10523,15 @@ section {
   color: #555555;
 }
 
+.table {
+  background-color: #00b5e4;
+  color: #fff;
+}
+
+.table tr:nth-child(odd) {
+  background-color: #038aac;
+}
+
 input[type=text],
 textarea {
   padding: 0.5em;
@@ -11544,6 +11553,24 @@ footer .nav-link:last-of-type {
   }
 }
 
+.price-icon {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5em;
+}
+
+.save-icon i {
+  color: #ccc;
+  font-size: 1.6em;
+  cursor: pointer;
+}
+
+.save-icon button {
+  border: none;
+  background-color: #f8fafc;
+  outline: none;
+}
+
 .img-wrapper-dashboard {
   width: 20%;
 }
@@ -11559,6 +11586,8 @@ footer .nav-link:last-of-type {
 }
 
 .profile {
+  padding: 1em;
+  background-color: #fff;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

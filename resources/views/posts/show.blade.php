@@ -8,9 +8,15 @@
                             <figure class="single-img-wrapper"><img src="/storage/cover_images/{{$post->image_cover}}"></figure> 
                             <div class="property-bedroom-bathroom">
                             </div>
-                                <p class="price">&#163;{{ $post->price }}</p>
-                                <div class="icon">
-                                    <i class="fas fa-heart"></i>
+                                <div class="price-icon">
+                                    <p class="price">&#163;{{ $post->price }}</p>
+                                    <div class="save-icon">
+                                        <form method="post" action="/saved-posts">
+                                            @CSRF
+                                            <input id="post_id" name="post_id" value={{ $post->id }} hidden>
+                                            <button id="btn-save" type="submit"><i class="fas fa-heart"></i></button>
+                                        </form>
+                                    </div>
                                 </div>
                                 <p>{{ $post->address }}</p>
                                 <p>{{ $post->location }}</p>
@@ -24,7 +30,7 @@
                             </div>
                             <div id="messenger" class="message-form">
                                 <h5>Contact Agent</h5>
-                                <Messenger />
+                                <Messenger :data="data" />
                             </div>   
                                 @endif
                             </div>

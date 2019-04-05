@@ -52,4 +52,11 @@ class PagesController extends Controller
         return view('pages.agents')->with('data', $data)->with('agents', $agents);
     }
 
+    public function updateProfile()
+    {
+        return view('users.edit')->with('id', auth()->user()->id);
+    }
+
+    
+
 }

@@ -579,18 +579,18 @@ var render = function() {
         {
           name: "model",
           rawName: "v-model",
-          value: _vm.messageBody,
-          expression: "messageBody"
+          value: _vm.body,
+          expression: "body"
         }
       ],
       attrs: { type: "submit" },
-      domProps: { value: _vm.messageBody },
+      domProps: { value: _vm.body },
       on: {
         input: function($event) {
           if ($event.target.composing) {
             return
           }
-          _vm.messageBody = $event.target.value
+          _vm.body = $event.target.value
         }
       }
     }),
@@ -11841,12 +11841,15 @@ burgerBtn.addEventListener('click', function () {
   console.log('clicked');
 });
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
-Vue.component('Messenger', __webpack_require__(/*! ./components/Messenger.vue */ "./resources/js/components/Messenger.vue").default);
+Vue.component('Messenger', {
+  props: 'body',
+  template: __webpack_require__(/*! ./components/Messenger.vue */ "./resources/js/components/Messenger.vue")
+});
 new Vue({
   el: '#messenger',
   data: function data() {
     return {
-      messageBody: ""
+      body: ""
     };
   }
 });
