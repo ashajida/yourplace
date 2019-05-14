@@ -25,15 +25,14 @@
                     <option value="5" label="5">
                 </datalist>
             </div>
-            <div class="f-group">
+             <div class="f-group">
                 <label for="price">Price range</label><br/>
-                <input type="range" list="tickmarks" class="slider" name="price" id="price" min="200.00" max="1000.00" step="100">
+                <input type="range" list="tickmarks" class="slider" name="price" id="price" min="400" max="1000" step="200">
                 <datalist id="tickmarks">
-                    <option value="200" label="200-400">
-                    <option value="400" label="400-600">
-                    <option value="600" label="600-800">
-                    <option value="800" label="800-1000">
-                    <option value="1000" label="+1000">
+                    <option value="100" label="-400">
+                    <option value="200" label="-600">
+                    <option value="800" label="-800">
+                    <option value="1000" label="-1000"> 
                 </datalist>
             </div>
             <input type="submit" value="Search">

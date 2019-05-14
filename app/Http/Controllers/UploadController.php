@@ -14,7 +14,7 @@ class UploadController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
         
           // Validator
@@ -39,6 +39,7 @@ class UploadController extends Controller
 
             // Upload the image
             $path = $request->file('cover_image')->storeAs('public/cover_images', $filename_to_store);
+
         } else {
             $filename_to_store = 'noimage.jpg';
         }

@@ -101,7 +101,7 @@ class UsersController extends Controller
         $user = User::find($id);
         $user->delete();
 
-        return redirect('/dashboard')->with('success', 'Post Deleted');
+        return redirect('/dashboard')->with('success', 'User Deleted');
     }
 
     
@@ -121,31 +121,32 @@ class UsersController extends Controller
             'cover_image' => 'image|nullable|max:1999'
         ]);
 
-        // Handle File Upload
-        if($request->hasFile('cover_image'))
-        {
-            // Get filename with ext
-            $filename_with_ext = $request->file('cover_image')->getClientOriginalName();
-
-            // filename
-            $filename = pathinfo($filename_with_ext, PATHINFO_FILENAME);
-
-            //Extension
-            $extension = $request->file('cover_image')->guessClientExtension();
-
-            // Filename to store
-            $filename_to_store = $filename.'_'.time().'.'.$extension;
-
-            // Upload the image
-            $path = $request->file('cover_image')->storeAs('public/cover_images', $filename_to_store);
-        } else {
-            $filename_to_store = 'noimage.jpg';
-        }
-
+               // Handle File Upload
+               if($request->hasFile('cover_image'))
+               {
+                   // Get filename with ext
+                   $filename_with_ext = $request->file('cover_image')->getClientOriginalName();
        
+                   // filename
+                   $filename = pathinfo($filename_with_ext, PATHINFO_FILENAME);
+       
+                   //Extension
+                   $extension = $request->file('cover_image')->guessClientExtension();
+       
+                   // Filename to store
+                   $filename_to_store = $filename.'_'.time().'.'.$extension;
+       
+                   // Upload the image
+                   $path = $request->file('cover_image')->storeAs('public/cover_images', $filename_to_store);
+               } else {
+                   $filename_to_store = 'noimage.jpg';
+               }
+
         $user = User::find($id);
-        $user->cover_image = $request->cover_image;
+        $user->cover_image = $filename_to_store;
         $user->save();
+
+        echo $user->cover_image;
 
         return redirect('/dashboard')->with('success', 'User updated');
     }

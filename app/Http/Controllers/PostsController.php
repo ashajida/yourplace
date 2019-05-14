@@ -5,9 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\User;
+use App\SavedPost;
+
+
 
 class PostsController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      * @param  \Illuminate\Http\Request $request
@@ -60,12 +64,14 @@ class PostsController extends Controller
             'address' => 'required',
             'bathrooms' => 'required',
             'bedrooms' => 'required',
-            'location' => 'required',
+            'city' => 'required',
             'price' => 'required',
             'title' => 'required',
             'property-type' => 'required',
             'status' => 'required',
             'body' => 'required',
+            'longitude' => 'required',
+            'latitude' => 'required',
             'cover_image' => 'image|nullable|max:1999'
         ]);
 
@@ -98,15 +104,17 @@ class PostsController extends Controller
         $post->bedrooms = $request->input('bedrooms');
         $post->bathrooms = $request->input('bathrooms');
         $post->address = $request->input('address');
-        $post->location = $request->input('location');
+        $post->location = $request->input('city');
         $post->body = $request->input('body');
         $post->price = $request->input('price');;
         $post->property_status = $request->input('status');
-        $post->type = $request->input('property-type');;
+        $post->type = $request->input('property-type');
+        $post->longitude = $request->input('longitude');
+        $post->latitude = $request->input('latitude');
         $post->user_id = auth()->user()->id;
         $post->image_cover = $filename_to_store;
         $post->save();
-
+       
         return redirect('/dashboard')->with('success', 'Property Added');
 
     }
@@ -125,7 +133,21 @@ class PostsController extends Controller
         
         $agent = User::find($user_id);
 
-        return view('posts.show')->with('data', $data)->with('post', $post)->with('agent', $agent);
+        $isSaved = false;
+
+        if(auth()->user()) {
+            $current_user_id = auth()->user()->id;
+            $savedPost = SavedPost::where('post_id', $post->id)
+            ->where('user_id', $current_user_id)
+            ->get();
+           
+            if(count($savedPost) > 0) {
+                $isSaved = true;
+            } 
+        }
+
+        return view('posts.show')->with('data', $data)->with('post', $post)->with('agent', $agent)
+        ->with('savedPost', $isSaved);
     }
 
     /**

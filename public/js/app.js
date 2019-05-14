@@ -11840,6 +11840,51 @@ burgerBtn.addEventListener('click', function () {
   menu.classList.toggle('open');
   console.log('clicked');
 });
+var API_KEY = 'TlCFXYQq0U2EOpuiAjkC6w18859';
+
+var handleApi = function handleApi(e, API_KEY, elements) {
+  e.preventDefault();
+  var postcode = elements.postcode,
+      addressInput = elements.addressInput,
+      longitute = elements.longitute,
+      latitude = elements.latitude,
+      city = elements.city;
+
+  if (postcode === "") {
+    document.querySelector('#err-message').innerText = 'Fill in postcode';
+    return;
+  }
+
+  var endPoint = "https://api.getaddress.io/find/".concat(postcode, "?api-key=").concat(API_KEY);
+  addressInput.innerHTML = "";
+  fetch(endPoint).then(function (res) {
+    return res.json();
+  }).then(function (data) {
+    data.addresses.forEach(function (address) {
+      var addressArr = address.split(',');
+      addressInput.innerHTML += "<option>".concat(addressArr[0], "</option>");
+      city.value = addressArr[5];
+    });
+    longitude.value = data.longitude;
+    latitude.value = data.latitude;
+  });
+};
+
+var btnPostcode = document.querySelector('#btnPostcode');
+var postcode_lookup = document.querySelector('#postcode_lookup');
+var addressInput = document.querySelector('#address');
+var longitude = document.querySelector('#longitude');
+var latitude = document.querySelector('#latitude');
+var city = document.querySelector('#city');
+btnPostcode.addEventListener('click', function (e) {
+  return handleApi(e, API_KEY, {
+    postcode: postcode_lookup.value,
+    addressInput: addressInput,
+    longitude: longitude,
+    latitude: latitude,
+    city: city
+  });
+});
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 Vue.component('Messenger', {
   props: 'body',
