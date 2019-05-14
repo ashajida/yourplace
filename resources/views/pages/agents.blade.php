@@ -9,7 +9,7 @@
                         @foreach ( $agents as $agent )
                             <div class="agent">
                                 <figure>
-                                    <img src="{{ asset('img/agent-1.jpg') }}">
+                                    <img src="/storage/cover_images/{{$agent->cover_image}}">
                                 </figure>
                                 <h5>{{ $agent->name  }}&nbsp;{{ $agent->lastname  }}</h5>
                                 <p class="text-sm">Nottingham</p>

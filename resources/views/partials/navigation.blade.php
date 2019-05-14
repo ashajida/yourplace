@@ -1,7 +1,7 @@
 <nav class="primary-nav">
         <div class="primary-nav-list">
             <div class="logo">
-                <a href="{{ url('/') }}">Yourplace</a>
+                <a href="{{ url('/') }}"><img src="{{ asset('img/logo.png')}}" /></a>
             </div>
             <div class="nav-links">
                 <a class="nav-link" href="{{ url('/') }}">Home</a>

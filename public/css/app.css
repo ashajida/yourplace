@@ -10491,9 +10491,13 @@ a.text-dark:focus {
   }
 }
 
-body {
+* {
   box-sizing: border-box;
-  font-size: 18px;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
   font-weight: 400;
   text-rendering: optimizeLegibility;
 }
@@ -10501,6 +10505,7 @@ body {
 h1,
 h2,
 h3 {
+  text-transform: uppercase;
   margin-bottom: 1em;
 }
 
@@ -10658,6 +10663,7 @@ a:hover {
   width: 100px;
   text-align: center;
   font-size: 14px;
+  cursor: pointer;
 }
 
 ._btn-ghost {
@@ -10682,7 +10688,7 @@ a:hover {
   color: #fff;
 }
 
-.danger {
+table input[type=submit] {
   background-color: #ee1d1d;
   border: 1px solid #ee1d1d;
 }
@@ -10786,7 +10792,7 @@ a:hover {
 .burger-menu {
   position: absolute;
   right: 0;
-  top: 0;
+  top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -10824,6 +10830,11 @@ a:hover {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+}
+
+.logo img {
+  width: 75px;
+  height: 75px;
 }
 
 .hero {
@@ -11206,7 +11217,7 @@ svg {
 }
 
 footer {
-  padding: 35px 0;
+  padding: 90px 0;
   background-color: #2ee4b1;
 }
 
@@ -11466,7 +11477,7 @@ footer .nav-link:last-of-type {
 }
 
 .auth-form {
-  padding: 35px 0;
+  padding: 170px 0;
 }
 
 .creat-post {
@@ -11596,6 +11607,48 @@ footer .nav-link:last-of-type {
 
 .profile .name {
   width: 60%;
+}
+
+.user-location {
+  display: flex;
+}
+
+#map {
+  height: 300px;
+}
+
+.svg-wrapper {
+  width: 20%;
+  margin: 0 auto;
+}
+
+.bedroom-bathroom {
+  display: flex;
+  justify-content: space-around;
+}
+
+.bedroom-bathroom div {
+  text-align: center;
+}
+
+.bedroom-bathroom p::after {
+  content: "";
+  display: block;
+  background-color: #2ee4b1;
+  height: 2px;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 1em;
+}
+
+.author {
+  color: #2ee4b1;
+}
+
+.count {
+  font-size: 25px;
+  font-weight: 100;
+  text-align: center;
 }
 
 .navbar-laravel {

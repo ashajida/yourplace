@@ -45,10 +45,21 @@ class SavedPostsController extends Controller
         $user_id = auth()->user()->id;
         $post_id = $request->post_id;
 
-        $savedPost = new SavedPost;
-        $savedPost->user_id = $user_id;
-        $savedPost->post_id = $post_id;
-        $savedPost->save();
+        $posts = SavedPost::where('user_id', $user_id)
+        ->where('post_id', $post_id)->get();
+
+        if(count($posts) > 0) {
+
+            
+            return redirect("posts/"."$post_id")->with('success', 'Property already saved');
+        } else {
+            $savedPost = new SavedPost;
+            $savedPost->user_id = $user_id;
+            $savedPost->post_id = $post_id;
+            $savedPost->save();
+        }
+
+        
 
         return redirect("posts/"."$post_id")->with('success', 'Property saved');
     }

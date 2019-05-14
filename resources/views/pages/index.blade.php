@@ -44,7 +44,7 @@
                                 </div>
                                 <div class="service-description">
                                     <h3>Rent</h3>
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,</p>
+                                    <p>Homes are available from trust worthy agents.</p>
                                 </div>
                                 </div>
                                 <div class="service">
@@ -53,7 +53,7 @@
                                     </div>
                                     <div class="service-description">
                                     <h3>Lease</h3>
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,</p>
+                                    <p>You can find property lease for a viarity of prices.</p>
                                     </div>
                                 </div>
                                 <div class="service">
@@ -103,7 +103,7 @@
                                     </div>
                                     <div class="service-description">
                                         <h3>Buy</h3>
-                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,</p>
+                                        <p>Find the best home for sell that suits your pockets from all across the UK.</p>
                                     </div>
                                 </div>
                             </div>
@@ -122,7 +122,7 @@
                                 <img src="{{ asset('img/testimony-1.jpg') }}" alt="">
                             </figure>
                             <div class="testimonial-description">
-                                <p class="text">&#10077; Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium. &#10078;</p>
+                                <p class="text">&#10077; My boyfriend and I used Your Place to buy our first house. &#10078;</p>
                                 <p class="name">Julie Jones</p>
                             </div>
                         </div>
@@ -133,7 +133,7 @@
                                 <img src="{{ asset('img/testimony-2.jpg') }}" alt="">
                             </figure>
                             <div class="testimonial-description">
-                                <p class="text">&#10077; Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium. &#10078;</p>
+                                <p class="text">&#10077; I was able to find my dream home thanks to Your Place. &#10078;</p>
                                 <p class="name">Chris Hawks</p>
                             </div>
                         </div>
@@ -144,7 +144,7 @@
                                 <img src="{{ asset('img/testimony-3.jpg') }}" alt="">
                             </figure>
                             <div class="testimonial-description">
-                                <p class="text">&#10077; Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium. &#10078;</p>
+                                <p class="text">&#10077; Wow! I wish I started using Your Place sooner because this website has been a life saver for me and my family. &#10078;</p>
                                 <p class="name">Neil Thompson</p>
                             </div>
                         </div>
